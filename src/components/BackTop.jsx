@@ -19,12 +19,12 @@ export default function BackTop() {
 
   return (
     <div
-      className={`fixed bottom-4 right-4 transition-opacity duration-500 ${!isVisible ? 'opacity-0' : 'opacity-100'}`}
+      className={`fixed bottom-24 right-4 transition-opacity duration-500 ${!isVisible ? 'opacity-0' : 'opacity-100'}`}
       style={{ display: isVisible ? 'block' : 'none' }}
     >
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="p-4 bg-black text-white rounded-full"
+        className="p-4 bg-black text-white rounded-full border-white border-2 animate-bounce hover:animate-none transition-all"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

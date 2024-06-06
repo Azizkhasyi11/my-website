@@ -1,10 +1,10 @@
-import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <div className="flex items-center justify-center h-20 bg-black mt-auto">
+    <div className="flex items-center justify-center h-20 bg-black mt-auto px-3">
       <div className="flex flex-col justify-center items-center w-1/2">
         <p className="text-white">© {year} <a href="https://github.com/Azizkhasyi11">Aziz Khasyi</a></p>
       </div>

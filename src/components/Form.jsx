@@ -1,3 +1,15 @@
+import PropTypes from 'prop-types';
+
+/**
+ * Input component
+ * 
+ * @param {string} label - The label for the input
+ * @param {string} type - The type of the input
+ * @param {string} value - The value of the input
+ * @param {function} onChange - The function to call when the input changes
+ * @param {object} props - Additional props
+ * @returns {JSX.Element} The input component
+ */
 function Input({ label, type, value, onChange, ...props }) {
   return (
     <label
@@ -20,7 +32,12 @@ function Input({ label, type, value, onChange, ...props }) {
   );
 }
 
-
-
+Input.propTypes = {
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  props: PropTypes.object,
+};
 
 export default Input;
