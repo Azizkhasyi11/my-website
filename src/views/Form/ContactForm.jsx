@@ -1,20 +1,21 @@
 import { useState } from "react";
 import Input from "../../components/Form";
 
-export default function ContactForm() {
+export default function ContactForm({ id }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ name, email, text });
+    console.log({ name, email, message });
   };
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4" id={id}>
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 dark:text-black">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Contact Us</h2>
+        <h2 className="text-2xl font-bold text-gray-800">Contact Me</h2>
+        <p className="text-gray-500 dark:text-gray-400 mb-4">Consider contact me</p>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <Input label="Name" type="text" value={name} onChange={(e) => setName(e.target.value)} autoComplete="name"/>

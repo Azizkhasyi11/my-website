@@ -10,7 +10,7 @@ export default function NavBar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if(isOpen) {
+      if (isOpen) {
         setIsOpen(false);
       }
     };
@@ -19,8 +19,8 @@ export default function NavBar() {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-    }
-  })
+    };
+  });
 
   return (
     <>
@@ -58,8 +58,13 @@ export default function NavBar() {
             </a>
           </li>
           <li>
-            <a href="#about" className="hover:text-gray-300 hover:underline">
+            <a href="#achievements" className="hover:text-gray-300 hover:underline">
               Achievements
+            </a>
+          </li>
+          <li>
+            <a href="#projects" className="hover:text-gray-300 hover:underline">
+              Projects
             </a>
           </li>
           <li>
@@ -88,6 +93,14 @@ export default function NavBar() {
             className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"
           >
             Achievements
+          </a>
+        </li>
+        <li className="w-full pb-2">
+          <a
+            href="#projects"
+            className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+          >
+            Projects
           </a>
         </li>
         <li className="w-full pt-2">

@@ -24,7 +24,7 @@ export default function BackTop() {
     >
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="p-4 bg-black text-white rounded-full border-white border-2 animate-bounce hover:animate-none transition-all"
+        className="p-4 bg-black text-white rounded-full border-white border-2 animate-bounce hover:animate-none hover:transition-all"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
