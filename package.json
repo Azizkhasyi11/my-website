@@ -10,6 +10,9 @@
     "preview": "vite preview",
     "postbuild": "react-snap"
   },
+  "reactSnap": {
+    "source": "dist"
+  },
   "dependencies": {
     "@fontsource/fira-code": "^5.0.18",
     "@tsparticles/react": "^3.0.0",
