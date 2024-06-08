@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../views/Home";
 import HomeLayout from "../layouts/HomeLayout";
-import NotFound from "../views/NotFound";
+import NotFound from "../views/404";
 
 const Routes = createBrowserRouter([
   {

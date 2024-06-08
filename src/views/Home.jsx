@@ -1,19 +1,9 @@
-import { useEffect, useState } from "react";
 import ContactForm from "./Form/ContactForm";
 import Card from "../components/Card";
 import arrowDown from "/arrow-down.svg"; // Adjust the path based on your project structure
 import { Helmet } from "react-helmet";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
-
   const handleScroll = () => {
     document.getElementById("about").scrollIntoView({ behavior: "smooth" });
   };
@@ -26,19 +16,16 @@ export default function Home() {
           content="A simple portfolio website built with Vite and React."
         />
       </Helmet>
-      <div
-        className={`fixed inset-0 z-50 bg-black transition-opacity duration-1000 ease-out ${
-          isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-      ></div>
       <section className="flex flex-col items-center justify-center h-screen bg-black text-white dark:bg-white dark:text-black transition-colors duration-500">
         <h1 className="text-4xl font-bold text-center">Hello, World!</h1>
-        <p className="text-lg text-gray-500 text-center">Welcome to my website</p>
+        <p className="text-lg text-gray-500 text-center">
+          Welcome to my website
+        </p>
         <div className="mt-10">
           <img
             src={arrowDown}
             alt="Scroll Down"
-            className="animate-bounce cursor-pointer select-none"
+            className="animate-bounce cursor-pointer select-none fill-white"
             onClick={handleScroll}
           />
         </div>
