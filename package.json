@@ -11,8 +11,13 @@
     "postbuild": "react-snap"
   },
   "reactSnap": {
-    "source": "dist"
+    "source": "dist",
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   },
+  "homepage": ".",
   "dependencies": {
     "@fontsource/fira-code": "^5.0.18",
     "@tsparticles/react": "^3.0.0",
