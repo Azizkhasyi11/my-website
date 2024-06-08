@@ -1,4 +1,6 @@
-export default function Card({
+import PropTypes from 'prop-types';
+
+function Card({
   title = "Ipsum incididunt mollit qui nostrud",
   description = "Duis labore nostrud laborum id ex et labore nulla laboris ad ad tempor.",
   image = "https://placehold.co/400",
@@ -25,3 +27,13 @@ export default function Card({
     </div>
   );
 }
+
+Card.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  link: PropTypes.string,
+  isFlex: PropTypes.bool
+};
+
+export default Card;
