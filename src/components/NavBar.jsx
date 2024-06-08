@@ -24,7 +24,7 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="bg-black flex justify-between items-center p-4 border-b-2 fixed w-full z-50 top-0 left-0 text-white">
+      <nav className="bg-black flex justify-between items-center p-4 border-b-2 fixed w-full z-40 top-0 left-0 text-white">
         <a className="flex gap-4 items-center" href="/">
           <img
             src="https://avatars.githubusercontent.com/u/74176356?v=4"
