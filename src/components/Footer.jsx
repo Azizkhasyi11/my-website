@@ -1,4 +1,4 @@
-import { FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaInstagram, FaGithub, FaDiscord } from "react-icons/fa";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -22,8 +22,11 @@ export default function Footer() {
           >
             <FaTwitter />
           </a>
-          <a href="#" className="text-white hover:text-gray-300">
+          <a href="https://www.instagram.com/aziz_khasyi11" className="text-white hover:text-gray-300">
             <FaInstagram />
+          </a>
+          <a href="https://discord.com/users/588313501169352718" className="text-white hover:text-gray-300">
+            <FaDiscord />
           </a>
         </div>
       </div>

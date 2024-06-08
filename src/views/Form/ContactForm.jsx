@@ -15,13 +15,26 @@ export default function ContactForm({ id }) {
     <section className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4" id={id}>
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 dark:text-black">
         <h2 className="text-2xl font-bold text-gray-800">Contact Me</h2>
-        <p className="text-gray-500 dark:text-gray-400 mb-4">Consider contact me</p>
+        <p className="text-gray-500 dark:text-gray-400 mb-4">
+          Consider contacting me
+        </p>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <Input label="Name" type="text" value={name} onChange={(e) => setName(e.target.value)} autoComplete="name"/>
+            <Input
+              label="Name"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              autoComplete="name"
+            />
           </div>
           <div className="mb-4">
-            <Input label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+            <Input
+              label="Email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div className="mb-6">
             <label htmlFor="OrderNotes" className="sr-only">

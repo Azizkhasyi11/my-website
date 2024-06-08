@@ -2,8 +2,7 @@ import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import BackTop from "../components/BackTop";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function HomeLayout() {
   const [isLoading, setIsLoading] = useState(true);
