@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
 import BackTop from "../components/BackTop";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Projects() {
   const [isLoading, setIsLoading] = useState(true);
@@ -52,6 +53,7 @@ export default function Projects() {
       </div>
       <Footer />
       <BackTop />
+      <Analytics />
     </>
   );
 }
