@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import BackTop from "../components/BackTop";
 import { useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export default function HomeLayout() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,6 +31,7 @@ export default function HomeLayout() {
         <Footer />
         <BackTop />
         <Analytics />
+        <SpeedInsights />
       </div>
     </>
   );

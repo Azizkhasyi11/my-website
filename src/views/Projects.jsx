@@ -5,6 +5,7 @@ import Card from "../components/Card";
 import { Link } from "react-router-dom";
 import BackTop from "../components/BackTop";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export default function Projects() {
   const [isLoading, setIsLoading] = useState(true);
@@ -54,6 +55,7 @@ export default function Projects() {
       <Footer />
       <BackTop />
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }
