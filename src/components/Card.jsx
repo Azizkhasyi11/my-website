@@ -1,19 +1,31 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 function Card({
   title = "Ipsum incididunt mollit qui nostrud",
   description = "Duis labore nostrud laborum id ex et labore nulla laboris ad ad tempor.",
-  image = "https://placehold.co/400",
-  link = "#",
-  isFlex = false
+  image = "",
+  link = "https://github.com/Azizkhasyi11",
+  isFlex = false,
 }) {
   return (
-    <div className={`bg-white shadow-lg rounded-lg overflow-hidden ${ isFlex ? ` lg:w-1/5 md:w-1/3 sm:w-full` : '' }`}>
-      <img src={image} alt={title} className="w-full h-48 object-cover" />
-      <div className="p-6">
-        <h2 className="font-semibold text-xl text-black">{title}</h2>
-        <p className="text-gray-500">{description}</p>
-        <div className="mt-4">
+    <div
+      className={`bg-white shadow-lg rounded-lg overflow-hidden flex flex-col ${
+        isFlex ? ` lg:w-1/5 md:w-1/3 sm:w-full` : ""
+      }`}
+    >
+      {image && (
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-56 object-cover object-center"
+        />
+      )}
+      <div className="p-6 flex-1 flex flex-col">
+        <div className="flex-1">
+          <h2 className="font-semibold text-xl text-black">{title}</h2>
+          <p className="text-gray-500">{description}</p>
+        </div>
+        <footer className="mt-auto pt-4">
           <a
             href={link}
             className="text-blue-500 hover:underline"
@@ -22,7 +34,7 @@ function Card({
           >
             Read More
           </a>
-        </div>
+        </footer>
       </div>
     </div>
   );
@@ -33,7 +45,7 @@ Card.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string,
   link: PropTypes.string,
-  isFlex: PropTypes.bool
+  isFlex: PropTypes.bool,
 };
 
 export default Card;

@@ -2,6 +2,7 @@ import ContactForm from "./Form/ContactForm";
 import Card from "../components/Card";
 import arrowDown from "/arrow-down.svg"; // Adjust the path based on your project structure
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const handleScroll = () => {
@@ -57,11 +58,14 @@ export default function Home() {
           This is the projects section
         </p>
         <div className="mt-5 flex justify-center gap-5 px-4 flex-wrap">
-          <Card isFlex />
+          <Card isFlex image="https://placehold.co/400"/>
           <Card isFlex />
           <Card isFlex />
           <Card isFlex />
         </div>
+        <Link className="mt-5 bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors duration-500" to={'/projects'}>
+          See More
+        </Link>
       </section>
       <ContactForm id="contact" />
     </>
