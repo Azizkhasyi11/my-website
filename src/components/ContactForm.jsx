@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Input from "../../components/Form";
-import Button from "../../components/Button";
+import Input from "./Form";
+import Button from "./Button";
 
-export default function ContactForm({ id }) {
+export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -13,11 +13,13 @@ export default function ContactForm({ id }) {
   };
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4" id={id}>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-4">
       <div className="bg-zinc-800 shadow-md rounded px-8 pt-6 pb-8 mb-4 text-white">
         <h2 className="text-2xl font-bold text-white">Contact Me</h2>
         <p className="text-gray-500 dark:text-gray-400 mb-4">
-          Consider contacting me
+          {/* {sections.contact.description} */}
+
+          Feel free to contact me if you have any questions or something.
         </p>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -62,6 +64,6 @@ export default function ContactForm({ id }) {
           </div>
         </form>
       </div>
-    </section>
+    </div>
   );
 }

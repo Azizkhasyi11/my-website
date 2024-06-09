@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { navLinks } from "../data";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,13 +25,13 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className=" backdrop-blur-lg flex justify-between items-center p-4 border-b-2 fixed w-full z-40 top-0 left-0 text-white">
+      <nav className="backdrop-blur-lg flex justify-between h-14 items-center p-4 border-b-2 fixed w-full z-40 top-0 left-0 text-white">
         <a className="flex gap-4 items-center" href="/">
-          <img
+          {/* <img
             src="https://avatars.githubusercontent.com/u/74176356?v=4"
             alt="logo"
             className="h-10 w-10 rounded-full"
-          />
+          /> */}
           Aziz Khasyi
         </a>
         <div className="md:hidden">
@@ -52,65 +53,33 @@ export default function NavBar() {
           </button>
         </div>
         <ul className={`hidden md:flex md:items-center md:gap-4`}>
-          <li>
-            <a href="#about" className="hover:text-gray-300 hover:underline">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#achievements" className="hover:text-gray-300 hover:underline">
-              Achievements
-            </a>
-          </li>
-          <li>
-            <a href="#projects" className="hover:text-gray-300 hover:underline">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="hover:text-gray-300 hover:underline">
-              Contact
-            </a>
-          </li>
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <a
+                href={link.url}
+                className="hover:text-gray-300 hover:underline"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
       <ul
-        className={`fixed top-16 right-0 w-1/2 text-center space-y-1 dark:bg-black flex flex-col bg-gray-50 items-center py-4 z-50 shadow-black shadow-sm md:hidden rounded transform transition-transform duration-300 ${
+        className={`fixed top-[54px] right-[-2px] w-44 text-center space-y-1flex flex-col border-2 backdrop-blur-lg items-center py-4 z-50 shadow-black shadow-sm md:hidden rounded transform transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <li className="w-full pb-2">
-          <a
-            href="#about"
-            className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-          >
-            About
-          </a>
-        </li>
-        <li className="w-full pb-2">
-          <a
-            href="#achievements"
-            className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-          >
-            Achievements
-          </a>
-        </li>
-        <li className="w-full pb-2">
-          <a
-            href="#projects"
-            className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-          >
-            Projects
-          </a>
-        </li>
-        <li className="w-full pt-2">
-          <a
-            href="#contact"
-            className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-          >
-            Contact
-          </a>
-        </li>
+        {navLinks.map((link) => (
+          <li key={link.id}>
+            <a
+              href={link.url}
+              className="block rounded-lg px-4 py-2 text-sm font-medium"
+            >
+              {link.name}
+            </a>
+          </li>
+        ))}
       </ul>
     </>
   );
