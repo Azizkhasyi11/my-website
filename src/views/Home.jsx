@@ -1,8 +1,8 @@
 import ContactForm from "./Form/ContactForm";
 import Card from "../components/Card";
 import arrowDown from "/arrow-down.svg"; // Adjust the path based on your project structure
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import Button from "../components/Button";
 
 export default function Home() {
   const handleScroll = () => {
@@ -11,63 +11,78 @@ export default function Home() {
 
   return (
     <>
-      <Helmet>
-        <meta
-          name="description"
-          content="A simple portfolio website built with Vite and React."
-        />
-      </Helmet>
-      <section className="flex flex-col items-center justify-center h-screen bg-black text-white dark:bg-white dark:text-black transition-colors duration-500">
-        <h1 className="text-4xl font-bold text-center">Hello, World!</h1>
-        <p className="text-lg text-gray-500 text-center">
-          Welcome to my website
-        </p>
-        <div className="mt-10">
-          <img
-            src={arrowDown}
-            alt="Scroll Down"
-            className="animate-bounce cursor-pointer select-none fill-white"
-            onClick={handleScroll}
-          />
+      <section className="relative flex flex-col items-center justify-center h-screen bg-black text-black dark:bg-zinc-900 dark:text-white transition-colors duration-500">
+        <div className="container mx-auto px-4 flex flex-col items-center">
+          <h1 className="relative text-4xl font-bold text-center z-10">
+            Hello, World!
+          </h1>
+          <p className="relative text-lg text-gray-500 text-center z-10">
+            Welcome to my website
+          </p>
+          <div className="mt-10 relative z-10 center">
+            <img
+              src={arrowDown}
+              alt="Scroll Down"
+              className="animate-bounce cursor-pointer select-none fill-white"
+              onClick={handleScroll}
+            />
+          </div>
         </div>
       </section>
+
       <section
-        className="flex flex-col items-center justify-center h-80 bg-white text-black dark:bg-zinc-800 dark:text-white transition-colors duration-500"
+        className="flex flex-col items-center justify-center py-20 transition-colors duration-500"
         id="about"
       >
-        <h1 className="text-4xl font-bold text-center">About</h1>
-        <p className="text-lg text-gray-500 dark:text-gray-400 text-center">
-          This is the about section
-        </p>
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-bold text-center">About</h1>
+          <p className="text-lg text-gray-500 dark:text-gray-400 text-center">
+            This is the about section
+          </p>
+        </div>
       </section>
+
       <section
-        className="flex flex-col items-center justify-center h-80 bg-white text-black dark:bg-zinc-800 dark:text-white transition-colors duration-500"
+        className="flex flex-col items-center justify-center py-20 transition-colors duration-500"
         id="achievements"
       >
-        <h1 className="text-4xl font-bold text-center">Achievements</h1>
-        <p className="text-lg text-gray-500 dark:text-gray-400 text-center">
-          This is the achievements section
-        </p>
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-bold text-center">Achievements</h1>
+          <p className="text-lg text-gray-500 dark:text-gray-400 text-center">
+            This is the achievements section
+          </p>
+        </div>
       </section>
+
       <section
-        className="flex flex-col items-center justify-center py-20 bg-white text-black dark:bg-zinc-800 dark:text-white transition-colors duration-500"
+        className="flex flex-col items-center justify-center py-20 transition-colors duration-500"
         id="projects"
       >
-        <h1 className="text-4xl font-bold text-center">Projects</h1>
-        <p className="text-lg text-gray-500 dark:text-gray-400 text-center">
-          This is the projects section
-        </p>
-        <div className="mt-5 flex justify-center gap-5 px-4 flex-wrap">
-          <Card isFlex image="https://placehold.co/400"/>
-          <Card isFlex />
-          <Card isFlex />
-          <Card isFlex />
+        <div className="container mx-auto px-4 flex flex-col items-center">
+          <h1 className="text-4xl font-bold text-center">Projects</h1>
+          <p className="text-lg text-gray-500 dark:text-gray-400 text-center">
+            This is the projects section
+          </p>
+          <div className="mt-5 flex justify-center gap-5 px-4 flex-wrap mb-4">
+            <Card isFlex image="https://placehold.co/400" />
+            <Card isFlex />
+            <Card isFlex />
+            <Card isFlex />
+          </div>
+          <Button as={Link} to="/projects">
+            See More
+          </Button>
         </div>
-        <Link className="mt-5 bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors duration-500" to={'/projects'}>
-          See More
-        </Link>
       </section>
-      <ContactForm id="contact" />
+
+      <section
+        className="flex flex-col items-center justify-center py-20 transition-colors duration-500"
+        id="contact"
+      >
+        <div className="container mx-auto px-4">
+          <ContactForm />
+        </div>
+      </section>
     </>
   );
 }

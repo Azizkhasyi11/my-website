@@ -9,7 +9,7 @@ function Card({
 }) {
   return (
     <div
-      className={`bg-white shadow-lg rounded-lg overflow-hidden flex flex-col ${
+      className={` bg-zinc-900 shadow-lg text-white rounded-lg overflow-hidden flex flex-col ${
         isFlex ? ` lg:w-1/5 md:w-1/3 sm:w-full` : ""
       }`}
     >
@@ -22,8 +22,8 @@ function Card({
       )}
       <div className="p-6 flex-1 flex flex-col">
         <div className="flex-1">
-          <h2 className="font-semibold text-xl text-black">{title}</h2>
-          <p className="text-gray-500">{description}</p>
+          <h2 className="font-semibold text-xl">{title}</h2>
+          <p className="text-gray-300">{description}</p>
         </div>
         <footer className="mt-auto pt-4">
           <a

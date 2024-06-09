@@ -23,7 +23,7 @@ export default function HomeLayout() {
           isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       ></div>
-      <div className="flex flex-col min-h-screen bg-white dark:bg-zinc-800 text-black dark:text-white">
+      <div className="flex flex-col min-h-screen bg-white dark:bg-black text-black dark:text-white">
         <NavBar />
         <div className="flex-grow">
           <Outlet />

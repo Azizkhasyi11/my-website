@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Input from "../../components/Form";
+import Button from "../../components/Button";
 
 export default function ContactForm({ id }) {
   const [name, setName] = useState("");
@@ -13,8 +14,8 @@ export default function ContactForm({ id }) {
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4" id={id}>
-      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 dark:text-black">
-        <h2 className="text-2xl font-bold text-gray-800">Contact Me</h2>
+      <div className="bg-zinc-800 shadow-md rounded px-8 pt-6 pb-8 mb-4 text-white">
+        <h2 className="text-2xl font-bold text-white">Contact Me</h2>
         <p className="text-gray-500 dark:text-gray-400 mb-4">
           Consider contacting me
         </p>
@@ -40,33 +41,24 @@ export default function ContactForm({ id }) {
             <label htmlFor="OrderNotes" className="sr-only">
               Order notes
             </label>
-            <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600 dark:border-gray-700">
+            <div className="overflow-hidden rounded-lg border-white border shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
               <textarea
                 id="OrderNotes"
-                className="w-full resize-none border-none align-top focus:ring-0 sm:text-sm dark:bg-gray-800 dark:text-white"
+                className="w-full resize-none border-none align-top focus:ring-0 sm:text-sm dark:bg-zinc-800 dark:text-white placeholder-white"
                 rows="4"
                 placeholder="Enter a message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
-              <div className="flex items-center justify-end gap-2 bg-white p-3 dark:bg-gray-800">
-                <button
-                  type="button"
-                  className="rounded bg-gray-200 px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-gray-600 dark:bg-gray-700 dark:text-gray-200 dark:hover:text-gray-100"
-                  onClick={() => setMessage("")}
-                >
-                  Clear
-                </button>
-              </div>
             </div>
           </div>
-          <div className="flex items-center justify-between">
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            >
-              Send
-            </button>
+          <div className="flex items-center gap-3">
+            <Button type="submit">Send</Button>
+            <Button onClick={() => {
+              setName("");
+              setEmail("");
+              setMessage("");
+            }}>Clear</Button>
           </div>
         </form>
       </div>
