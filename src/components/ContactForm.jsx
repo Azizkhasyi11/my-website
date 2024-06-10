@@ -14,7 +14,7 @@ export default function ContactForm() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-4">
-      <div className="bg-zinc-800 shadow-md rounded px-8 pt-6 pb-8 mb-4 text-white">
+      <div className="bg-zinc-800 shadow-md rounded px-4 sm:px-8 pt-6 pb-8 mb-4 text-white">
         <h2 className="text-2xl font-bold text-white">Contact Me</h2>
         <p className="text-gray-500 dark:text-gray-400 mb-4">
           {/* {sections.contact.description} */}

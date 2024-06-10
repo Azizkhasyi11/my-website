@@ -1,8 +1,13 @@
-# React + Vite
+# My Portofolio Website
+![Preview](https://github.com/Azizkhasyi11/my-website/assets/74176356/efa53f99-27d6-46eb-ad0d-f6b2c6c1c395)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
+Finally, after some time I can build my own portofolio website again. And manage to build it using React + Vite, for my experience too.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies
+- Vite
+- JavaScript
+- React
+- Tailwind
+- Vercel
+- TSParticles

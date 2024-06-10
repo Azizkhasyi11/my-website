@@ -25,7 +25,7 @@ export default function Projects() {
           isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       ></div>
-      <div className="flex flex-col min-h-screen items-center justify-center dark:bg-zinc-800 dark:text-white">
+      <div className="flex flex-col min-h-screen md:px-10 items-center justify-center dark:bg-zinc-800 dark:text-white">
         <Link to="/" className="absolute top-5 left-5 hover:underline">
           Back
         </Link>
@@ -37,7 +37,7 @@ export default function Projects() {
             </p>
           </div>
           <div className="mt-5 flex justify-center gap-5 px-4 flex-wrap">
-            <Card isFlex />
+            <Card isFlex image="https://placehold.co/400"/>
             <Card isFlex />
             <Card isFlex />
             <Card isFlex />
