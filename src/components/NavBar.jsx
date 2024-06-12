@@ -3,7 +3,7 @@ import { navLinks } from "../data";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("hero");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);

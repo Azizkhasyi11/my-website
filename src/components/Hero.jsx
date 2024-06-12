@@ -1,10 +1,15 @@
+import CodeBlock from "./CodeBlock";
+
 export default function Hero() {
   const handleScroll = () => {
     document.getElementById("about").scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className="relative flex flex-col items-center justify-center h-screen bg-gray-400 text-black dark:bg-zinc-900 dark:text-white transition-colors duration-500" id="hero">
+    <section
+      className="relative flex flex-col items-center justify-center h-screen bg-gray-400 text-black dark:bg-zinc-900 dark:text-white transition-colors duration-500"
+      id="hero"
+    >
       <div className="container mx-auto px-4 flex flex-col items-center">
         <h1 className="relative text-4xl font-bold text-center z-10">
           Hello, World!
