@@ -1,21 +1,39 @@
-import CodeBlock from "./CodeBlock";
+import { useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Hero() {
+  const { language, setLanguage, translations } = useLanguage();
+
   const handleScroll = () => {
     document.getElementById("about").scrollIntoView({ behavior: "smooth" });
   };
 
+  const { greeting, welcome } = translations[language];
+
   return (
     <section
-      className="relative flex flex-col items-center justify-center h-screen bg-gray-400 text-black dark:bg-zinc-900 dark:text-white transition-colors duration-500"
+      className="relative flex flex-col items-center justify-center h-[650px] bg-gray-400 text-black dark:bg-zinc-900 dark:text-white transition-colors duration-500"
       id="hero"
     >
+      <div className="flex items-center justify-center absolute top-24 left-5">
+        <select
+          className="bg-black text-white border-white rounded-lg"
+          value={language}
+          onChange={(e) => setLanguage(e.target.value)}
+          title="Select Language"
+        >
+          <option value="en">English</option>
+          <option value="id">Indonesia</option>
+          <option value="jp">日本語</option>
+        </select>
+      </div>
       <div className="container mx-auto px-4 flex flex-col items-center">
-        <h1 className="relative text-4xl font-bold text-center z-10">
-          Hello, World!
+        <h1 className="relative text-4xl font-bold text-center z-10 flex flex-col">
+          <span className="text-base font-thin font-sansjp">ハロー、世界</span>
+          { greeting }
         </h1>
         <p className="relative text-lg text-gray-500 text-center z-10">
-          Welcome to my website
+          { welcome }
         </p>
         <div className="mt-10 relative z-10 center">
           <svg

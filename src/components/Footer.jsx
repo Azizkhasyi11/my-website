@@ -10,29 +10,34 @@ export default function Footer() {
     FaLinkedin,
     FaX,
     FaInstagram,
-    FaDiscord
+    FaDiscord,
   };
 
   return (
-    <div className="flex items-center justify-center h-20 bg-black mt-auto px-3">
-      <div className="flex flex-col justify-center items-center w-1/2">
-        <p className="text-white">© {year} <a href="https://github.com/Azizkhasyi11">Aziz Khasyi</a></p>
-      </div>
-      <div className="flex flex-col justify-center items-center w-1/2">
-        <div className="flex space-x-4">
-          {socialLinks.map((link) => {
-            const Icon = icons[link.logo];
-            return (
-              <a
-                key={link.id}
-                href={link.url}
-                target="_blank" rel="noopener noreferrer"
-                className="text-white hover:text-gray-300"
-              >
-                <Icon />
-              </a>
-            );
-          })}
+    <div className="h-20 bg-black mt-auto px-3">
+      <div className="flex items-center justify-center">
+        <div className="flex flex-col justify-center items-center w-1/2">
+          <p className="text-white">
+            © {year} <a href="https://github.com/Azizkhasyi11">Aziz Khasyi</a>
+          </p>
+        </div>
+        <div className="flex flex-col justify-center items-center w-1/2">
+          <div className="flex space-x-4">
+            {socialLinks.map((link) => {
+              const Icon = icons[link.logo];
+              return (
+                <a
+                  key={link.id}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-gray-300"
+                >
+                  <Icon />
+                </a>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

@@ -11,6 +11,9 @@ importers:
       '@fontsource/fira-code':
         specifier: ^5.0.18
         version: 5.0.18
+      '@fontsource/noto-sans-jp':
+        specifier: ^5.0.19
+        version: 5.0.19
       '@tsparticles/react':
         specifier: ^3.0.0
         version: 3.0.0(@tsparticles/engine@3.4.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -353,6 +356,9 @@ packages:
 
   '@fontsource/fira-code@5.0.18':
     resolution: {integrity: sha512-DuH/ewp/2sSYoJw7PxB1VuCyrxo7OCEWeML7sN5yNfP8gTleIktZl/dTopcPOHv1WwDUcqRG1veRoEgfEeYfqQ==}
+
+  '@fontsource/noto-sans-jp@5.0.19':
+    resolution: {integrity: sha512-N0KUmSqX6tlAlnqFQnDywj9e+4RithtLgFGlcRt/85EI8rmDYJFYQCZVhc+xTIk5Kgr1gLtNToHZzK61BTsWqw==}
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -2620,6 +2626,8 @@ snapshots:
   '@eslint/js@8.57.0': {}
 
   '@fontsource/fira-code@5.0.18': {}
+
+  '@fontsource/noto-sans-jp@5.0.19': {}
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
