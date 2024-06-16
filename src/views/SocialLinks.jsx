@@ -35,7 +35,7 @@ export default function SocialLinks() {
           </div>
         </div>
         {/* Content */}
-        <div className="p-4">
+        <div className="sm:p-4 pt-16 p-4">
           <h1 className="text-2xl font-bold">Aziz Khasyi</h1>
           <p className="text-gray-400">Student Programmer</p>
           <p className="text-sm text-gray-300 mt-2">
