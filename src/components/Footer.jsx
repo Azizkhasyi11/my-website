@@ -14,15 +14,19 @@ export default function Footer() {
   };
 
   return (
-    <div className="h-20 bg-black mt-auto px-3">
-      <div className="flex items-center justify-center">
-        <div className="flex flex-col justify-center items-center w-1/2">
-          <p className="text-white">
-            © {year} <a href="https://github.com/Azizkhasyi11">Aziz Khasyi</a>
-          </p>
+    <div className="bg-black mt-auto px-3 py-4 sm:border-0 border-t-2">
+      <div className="flex flex-col sm:flex-row items-center justify-center h-full">
+        <div className="flex flex-col justify-center items-center w-full sm:w-1/2">
+          <div className="text-sm text-center">
+            <p className="text-white">
+              © {year} <a href="https://github.com/Azizkhasyi11">Aziz Khasyi</a>
+            </p>
+            <p className="text-white">All Rights Reserved</p>
+          </div>
         </div>
-        <div className="flex flex-col justify-center items-center w-1/2">
-          <div className="flex space-x-4">
+        <div className="w-1/2 sm:w-0 sm:border-l-0 border-t border-white my-2 sm:my-0"></div>
+        <div className="flex flex-col justify-center items-center w-full sm:w-1/2 mt-2 sm:mt-0">
+          <div className="flex space-x-4 flex-wrap justify-center">
             {socialLinks.map((link) => {
               const Icon = icons[link.logo];
               return (
@@ -31,7 +35,7 @@ export default function Footer() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-gray-300"
+                  className="text-white hover:text-gray-300 mb-2"
                 >
                   <Icon />
                 </a>

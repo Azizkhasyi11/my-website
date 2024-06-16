@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { navLinks } from "../data";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("hero");
+  const [activeSection, setActiveSection] = useState("");
+
+  const { translations, language } = useLanguage();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -43,6 +46,8 @@ export default function NavBar() {
     }
   }, [isOpen]);
 
+  const { about, projects, contact } = translations[language];
+
   return (
     <>
       <nav className="backdrop-blur-lg flex justify-between h-14 items-center p-4 border-b-2 fixed w-full z-40 top-0 left-0 text-white">
@@ -72,7 +77,7 @@ export default function NavBar() {
             <li key={link.id}>
               <a
                 href={`#${link.id}`}
-                className={`hover:text-gray-300 hover:underline transition ${
+                className={`hover:opacity-50 hover:underline transition ${
                   activeSection === link.id ? "text-yellow-500 underline" : ""
                 }`}
               >

@@ -3,6 +3,7 @@ import Home from "../views/Home";
 import HomeLayout from "../layouts/HomeLayout";
 import NotFound from "../views/404";
 import Projects from "../views/Projects";
+import SocialLinks from "../views/SocialLinks";
 
 const Routes = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const Routes = createBrowserRouter([
   },{
     path: '/projects',
     element: <Projects />
+  },
+  {
+    path: '/socials',
+    element: <SocialLinks />
   },
   {
     path: '*',

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import BackTop from "../components/BackTop";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { myProjects } from "../data";
 
 export default function Projects() {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,7 +27,7 @@ export default function Projects() {
         }`}
       ></div>
       <div className="flex flex-col min-h-screen md:px-10 items-center justify-center dark:bg-zinc-800 dark:text-white">
-        <Link to="/" className="absolute top-5 left-5 hover:underline">
+        <Link to="/" className="absolute top-5 left-5 hover:underline animate-pulse">
           Back
         </Link>
         <div className="flex-grow my-12">
@@ -37,18 +38,16 @@ export default function Projects() {
             </p>
           </div>
           <div className="mt-5 flex justify-center gap-5 px-4 flex-wrap">
-            <Card isFlex image="https://placehold.co/400"/>
-            <Card isFlex />
-            <Card isFlex />
-            <Card isFlex />
-            <Card isFlex />
-            <Card isFlex />
-            <Card isFlex />
-            <Card isFlex />
-            <Card isFlex />
-            <Card isFlex />
-            <Card isFlex />
-            <Card isFlex />
+            {myProjects.map((project) => (
+              <Card
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                link={project.url}
+                isFlex
+              />
+            ))}
           </div>
         </div>
       </div>
