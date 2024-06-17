@@ -20,10 +20,12 @@ export default function SocialLinks() {
   };
 
   return (
-    <div className="min-h-screen text-white bg-black flex flex-col">
-      <div className="bg-zinc-800 min-h-screen max-w-[480px] mx-auto rounded flex-grow pb-2">
+    <div className="min-h-screen text-white flex flex-col animated-background">
+      <div className="relative bg-zinc-800 min-h-screen max-w-[480px] mx-auto rounded flex-grow pb-2">
+        {/* Background Blur Overlay */}
+        <div className="absolute inset-0 bg-black opacity-50 z-10 blur-sm"></div>
         {/* Banner */}
-        <div className="relative">
+        <div className="relative z-20">
           <img
             src={Banner}
             alt="Banner"
@@ -39,7 +41,7 @@ export default function SocialLinks() {
           </div>
         </div>
         {/* Content */}
-        <div className="sm:p-3 p-3" ref={ref}>
+        <div className="sm:p-3 p-3 relative z-20" ref={ref}>
           <h1 className="text-2xl font-bold">Aziz Khasyi</h1>
           <p className="text-gray-400">Student Programmer</p>
           <p className="text-sm text-gray-300 mt-2">
@@ -57,7 +59,7 @@ export default function SocialLinks() {
                     href={link.url}
                     className="flex items-center bg-white rounded-lg shadow hover:bg-zinc-600 hover:shadow-lg transition-all"
                   >
-                    <div className="flex-1 bg-zinc-700 p-4 rounded-l">
+                    <div className="flex-1 bg-zinc-700 hover:bg-black p-4 rounded-l">
                       <h2
                         className={`text-lg font-semibold ${link.color} hover:text-white flex gap-2 items-center`}
                       >
@@ -79,7 +81,7 @@ export default function SocialLinks() {
                 href="/"
                 className="flex items-center bg-white rounded-lg shadow-white hover:bg-zinc-600 hover:shadow-lg transition-all"
               >
-                <div className="flex-1 bg-zinc-700 p-4 rounded-l">
+                <div className="flex-1 bg-zinc-700 hover:bg-black p-4 rounded-l">
                   <h2 className="text-lg font-semibold hover:text-white flex gap-2 items-center">
                     <FaGlobe />
                     Website
@@ -93,7 +95,7 @@ export default function SocialLinks() {
             </Tilt>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center w-full mt-4">
+        <div className="flex flex-col justify-center items-center w-full mt-4 relative z-20">
           <div className="text-sm text-center">
             <p className="text-white">
               © {year} <a href="https://github.com/Azizkhasyi11">Aziz Khasyi</a>
@@ -102,6 +104,37 @@ export default function SocialLinks() {
           </div>
         </div>
       </div>
+      <style>{`
+        .animated-background {
+          background: linear-gradient(135deg, #1a1a1d, #4e4e50, #6f2232, #950740, #c3073f);
+          background-size: 400% 400%;
+          animation: gradientShift 15s ease infinite, pulse 5s infinite;
+        }
+
+        @keyframes gradientShift {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        @keyframes pulse {
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.8;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      `}</style>
     </div>
   );
 }
