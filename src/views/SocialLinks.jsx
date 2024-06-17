@@ -1,11 +1,14 @@
-import { FaArrowRight, FaGlobe } from "react-icons/fa"; // Ensure you have react-icons installed
+import { FaArrowRight, FaGlobe } from "react-icons/fa";
 import Banner from "/banner.jpeg";
 import { socialLinks } from "../data";
 import { FaInstagram, FaGithub, FaDiscord, FaLinkedin } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
+import { useParallax } from "react-scroll-parallax";
 
 export default function SocialLinks() {
   const year = new Date().getFullYear();
+
+  const { ref } = useParallax({ speed: 15 });
 
   const icons = {
     FaGithub,
@@ -35,7 +38,7 @@ export default function SocialLinks() {
           </div>
         </div>
         {/* Content */}
-        <div className="sm:p-4 pt-16 p-4">
+        <div className="sm:p-3 pt-9 p-3"  ref={ref}>
           <h1 className="text-2xl font-bold">Aziz Khasyi</h1>
           <p className="text-gray-400">Student Programmer</p>
           <p className="text-sm text-gray-300 mt-2">
@@ -43,7 +46,7 @@ export default function SocialLinks() {
             Indonesia. Still learning and a student. I think... That&apos;s enough
             for bio... Right?
           </p>
-          <div className="w-full border-l-0 border-t border-white my-2"></div>
+          <div className="w-full border-t border-white my-2"></div>
           <div className="mt-4 space-y-4">
             {socialLinks.map((link) => {
               const Icon = icons[link.logo];
@@ -51,35 +54,35 @@ export default function SocialLinks() {
                 <a
                   key={link.id}
                   href={link.url}
-                  className="flex items-center bg-white rounded-lg shadow hover:bg-zinc-600 hover:shadow-lg hover:mx-14 hover:skew-y-2 transition-all"
+                  className="flex items-center bg-white rounded-lg shadow hover:bg-zinc-600 hover:shadow-lg transition-all"
                 >
-                  <div className="flex-1 bg-zinc-700 hover:bg-zinc-950 p-4 rounded-l">
+                  <div className="flex-1 bg-zinc-700 p-4 rounded-l">
                     <h2
-                      className={`text-lg font-semibold ${link.color} hover:text-white`}
+                      className={`text-lg font-semibold ${link.color} hover:text-white flex gap-2 items-center`}
                     >
                       <Icon /> {link.name}
                     </h2>
                     <p className="text-sm text-gray-300">{link.description}</p>
                   </div>
-                  <div className="flex items-center justify-center w-10 h-full rounded-r">
-                    <FaArrowRight className={link.color} />
+                  <div className="flex items-center justify-center w-10 h-full rounded-r ">
+                    <FaArrowRight className="text-black" />
                   </div>
                 </a>
               );
             })}
             <a
               href="/"
-              className="flex items-center bg-white rounded-lg shadow hover:bg-zinc-600 hover:shadow-lg hover:mx-14 hover:skew-y-2 transition-all"
+              className="flex items-center bg-white rounded-lg shadow hover:bg-zinc-600 hover:shadow-lg transition-all"
             >
-              <div className="flex-1 bg-zinc-700 hover:bg-zinc-950 p-4 rounded-l">
-                <h2 className={`text-lg font-semibold hover:text-white`}>
+              <div className="flex-1 bg-zinc-700 p-4 rounded-l">
+                <h2 className="text-lg font-semibold hover:text-white flex gap-2 items-center">
                   <FaGlobe />
                   Website
                 </h2>
                 <p className="text-sm text-gray-300">Visit my website</p>
               </div>
-              <div className="flex items-center justify-center w-10 h-full rounded-r">
-                <FaArrowRight className="text-black"/>
+              <div className="flex items-center justify-center w-10 h-full rounded-r ">
+                <FaArrowRight className="text-black" />
               </div>
             </a>
           </div>
