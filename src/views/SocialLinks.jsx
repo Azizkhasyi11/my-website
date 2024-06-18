@@ -104,37 +104,6 @@ export default function SocialLinks() {
           </div>
         </div>
       </div>
-      <style>{`
-        .animated-background {
-          background: linear-gradient(135deg, #1a1a1d, #4e4e50, #6f2232, #950740, #c3073f);
-          background-size: 400% 400%;
-          animation: gradientShift 15s ease infinite, pulse 5s infinite;
-        }
-
-        @keyframes gradientShift {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-
-        @keyframes pulse {
-          0% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.8;
-          }
-          100% {
-            opacity: 1;
-          }
-        }
-      `}</style>
     </div>
   );
 }
