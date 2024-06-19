@@ -1,9 +1,31 @@
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import Card from "./Card";
-import { myProjects } from "../data";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Tilt } from "react-tilt";
 
 export default function Project() {
+  const [repos, setRepos] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get("https://api.github.com/users/Azizkhasyi11/repos")
+      .then((res) => {
+        const filteredRepos = res.data.filter((repo) => !repo.fork);
+        setRepos(filteredRepos);
+        console.log(filteredRepos);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+        console.log(err);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <section
       className="flex flex-col items-center justify-center py-20 transition-colors duration-500"
@@ -22,17 +44,26 @@ export default function Project() {
           </a>
           .
         </p>
-        <div className="mt-5 flex justify-center gap-8 flex-wrap mb-4">
-          {myProjects.slice(0, 4).map((project) => (
-            <Card
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              link={project.url}
-            />
-          ))}
-        </div>
+        {loading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p className="text-red-500">Failed to load projects.</p>
+        ) : (
+          <div className="mt-5 flex justify-center gap-8 flex-wrap mb-4">
+            {repos.slice(0, 4).map((repo) => (
+              <Tilt key={repo.id} className="Tilt" options={{ max: 25 }}>
+                <Card
+                  // key={repo.id}
+                  title={repo.name}
+                  description={repo.description || "No description available"}
+                  // image={repo.owner?.avatar_url || ""}
+                  link={repo.html_url}
+                  className="hover:shadow-md hover:shadow-white"
+                />
+              </Tilt>
+            ))}
+          </div>
+        )}
         <Button as={Link} to="/projects">
           See More
         </Button>
