@@ -6,13 +6,14 @@ function Card({
   image = "",
   link = "https://github.com/Azizkhasyi11",
   isFlex = false,
+  className = "",
 }) {
 
-  const descSlice = description.length > 60 ? `${description.slice(0, 60)}...` : description;
+  const descSlice = description.length > 20 ? `${description.slice(0, 20)}...` : description;
 
   return (
     <div
-      className={` bg-zinc-900 shadow-lg text-white rounded-lg overflow-hidden flex flex-col ${
+      className={` bg-zinc-900 shadow-lg text-white rounded-lg overflow-hidden flex flex-col ${className} ${
         isFlex ? ` lg:w-1/5 md:w-1/3 sm:w-full` : ""
       }`}
     >
@@ -49,6 +50,7 @@ Card.propTypes = {
   image: PropTypes.string,
   link: PropTypes.string,
   isFlex: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 export default Card;
