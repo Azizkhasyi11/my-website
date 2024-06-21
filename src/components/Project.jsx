@@ -16,12 +16,12 @@ export default function Project() {
       .then((res) => {
         const filteredRepos = res.data.filter((repo) => !repo.fork);
         setRepos(filteredRepos);
-        console.log(filteredRepos);
+        // console.log(filteredRepos);
         setLoading(false);
       })
       .catch((err) => {
         setError(err);
-        console.log(err);
+        // console.log(err);
         setLoading(false);
       });
   }, []);

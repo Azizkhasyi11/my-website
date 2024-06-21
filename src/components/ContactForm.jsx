@@ -17,8 +17,6 @@ export default function ContactForm() {
       <div className="bg-zinc-800 shadow-md rounded px-4 sm:px-8 pt-6 pb-8 mb-4 text-white">
         <h2 className="text-2xl font-bold text-white">Contact Me</h2>
         <p className="text-gray-500 dark:text-gray-400 mb-4">
-          {/* {sections.contact.description} */}
-
           Feel free to contact me if you have any questions or something.
         </p>
         <form onSubmit={handleSubmit}>
@@ -37,12 +35,10 @@ export default function ContactForm() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              autoComplete="email"
             />
           </div>
           <div className="mb-6">
-            <label htmlFor="OrderNotes" className="sr-only">
-              Order notes
-            </label>
             <div className="overflow-hidden rounded-lg border-white border shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
               <textarea
                 id="OrderNotes"

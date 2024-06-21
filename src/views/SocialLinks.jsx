@@ -42,7 +42,7 @@ export default function SocialLinks() {
         </div>
         {/* Content */}
         <div className="sm:p-3 p-3 relative z-20" ref={ref}>
-          <h1 className="text-2xl font-bold">Aziz Khasyi</h1>
+          <h1 className="text-2xl font-bold">Aziz Khasyi{" "}<span className="text-gray-400 text-sm font-thin">(BolehNgopi)</span></h1>
           <p className="text-gray-400">Student Programmer</p>
           <p className="text-sm text-gray-300 mt-2">
             Heya! A beginner programmer in web development. From Jakarta,
@@ -98,7 +98,7 @@ export default function SocialLinks() {
         <div className="flex flex-col justify-center items-center w-full mt-4 relative z-20">
           <div className="text-sm text-center">
             <p className="text-white">
-              © {year} <a href="https://github.com/Azizkhasyi11">Aziz Khasyi</a>
+              © {year} <a href="https://github.com/Azizkhasyi11" className="hover:underline hover:font-bold">Aziz Khasyi</a>
             </p>
             <p className="text-white">All Rights Reserved</p>
           </div>

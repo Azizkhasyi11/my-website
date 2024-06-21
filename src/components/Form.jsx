@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-function Input({ label, type, value, onChange, ...props }) {
+function Input({ label, type, value, onChange, required = false, ...props }) {
   return (
     <label
       htmlFor={label}
@@ -13,10 +13,11 @@ function Input({ label, type, value, onChange, ...props }) {
         placeholder={label}
         value={value}
         onChange={onChange}
+        required={required}
         {...props}
       />
       <span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 p-0.5 text-xs bg-zinc-800 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">
-        {label}
+        {required && <span className="text-red-500">*</span>}{label}
       </span>
     </label>
   );
@@ -27,6 +28,7 @@ Input.propTypes = {
   type: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  required: PropTypes.bool,
   props: PropTypes.object,
 };
 

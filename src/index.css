@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-  cursor: url('/cursor.png'), auto;
-} */
-
 html {
   scroll-behavior: smooth;
 }
@@ -14,93 +10,7 @@ body {
   font-family: "Fira Code", monospace;
 }
 
-/* Syntax Highlighting Styles */
-.code-container {
-  background-color: #282c34;
-  color: #abb2bf;
-  padding: 16px;
-  border-radius: 4px;
-  overflow: auto;
-  font-family: 'Courier New', Courier, monospace;
-  display: flex;
-  position: relative;
-}
-
-.line-numbers {
-  text-align: right;
-  padding-right: 10px;
-  user-select: none;
-  color: #636d83;
-  line-height: 1.5;
-  margin-right: 10px;
-}
-
-.code-content {
-  white-space: pre;
-  overflow: hidden; /* Ensures the cursor is visible */
-}
-
-.keyword {
-  color: #c678dd;
-}
-
-.string {
-  color: #98c379;
-}
-
-.comment {
-  color: #5c6370;
-}
-
-.number {
-  color: #ff8d44;
-}
-
-/* Typing Animation */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}
-
-.code-content::after {
-  content: '|';
-  color: orange;
-  position: absolute;
-  right: 16px;
-  animation: blink-caret 0.75s step-end infinite;
-}
-
-.animated-background {
-  background: linear-gradient(135deg, #1a1a1d, #4e4e50, #6f2232, #950740, #c3073f);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite, pulse 5s infinite;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 1;
-  }
+::selection {
+  background-color: white;
+  color: black;
 }

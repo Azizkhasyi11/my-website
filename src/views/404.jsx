@@ -8,6 +8,8 @@ export default function NotFound() {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
+    document.title = "404 - Not Found";
+    
     const initParticles = async (engine) => {
       await loadFull(engine);
     };

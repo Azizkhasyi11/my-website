@@ -29,7 +29,7 @@ export default function HomeLayout() {
       </Alert>
       <div className="flex flex-col min-h-screen bg-white dark:bg-black text-black dark:text-white">
         <NavBar />
-        <div className="flex-grow">
+        <div className="flex-grow flex flex-col">
           <Outlet />
         </div>
         <Footer />
