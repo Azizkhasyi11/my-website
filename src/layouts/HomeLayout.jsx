@@ -5,7 +5,6 @@ import BackTop from "../components/BackTop";
 import { useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import Alert from "../components/Alert";
 
 export default function HomeLayout() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,9 +23,6 @@ export default function HomeLayout() {
           isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       ></div>
-      <Alert>
-        Under Construction
-      </Alert>
       <div className="flex flex-col min-h-screen bg-white dark:bg-black text-black dark:text-white">
         <NavBar />
         <div className="flex-grow flex flex-col">

@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import { navLinks } from "../data";
-import { useLanguage } from "../context/LanguageContext";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-
-  const { translations, language } = useLanguage();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -45,8 +42,6 @@ export default function NavBar() {
       };
     }
   }, [isOpen]);
-
-  const { about, projects, contact } = translations[language];
 
   return (
     <>

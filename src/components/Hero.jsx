@@ -1,8 +1,4 @@
-import { useLanguage } from "../context/LanguageContext";
-
 export default function Hero() {
-  const { language, setLanguage } = useLanguage();
-
   const handleScroll = () => {
     document.getElementById("about").scrollIntoView({ behavior: "smooth" });
   };
@@ -13,7 +9,7 @@ export default function Hero() {
       className="relative flex flex-col items-center justify-center h-[650px] bg-gray-400 text-black dark:bg-zinc-900 dark:text-white transition-colors duration-500"
     >
       <div className="flex items-center justify-center absolute top-24 left-5">
-        <select
+        {/* <select
           className="bg-black text-white border-white rounded-lg"
           value={language}
           onChange={(e) => setLanguage(e.target.value)}
@@ -22,7 +18,7 @@ export default function Hero() {
           <option value="en">English</option>
           <option value="id">Indonesia</option>
           <option value="jp">日本語</option>
-        </select>
+        </select> */}
       </div>
       <div className="container mx-auto px-4 flex flex-col items-center">
         <h1 className="relative text-4xl font-bold text-center z-10 flex flex-col">
