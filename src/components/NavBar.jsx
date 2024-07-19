@@ -5,11 +5,22 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
+  // Debounce function to limit how often a function is called
+  const debounce = (func, delay) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  };
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleScroll = () => {
+  const handleScroll = debounce(() => {
     const scrollPosition = window.scrollY;
     navLinks.forEach((link) => {
       const section = document.getElementById(link.id);
@@ -24,7 +35,7 @@ export default function NavBar() {
         }
       }
     });
-  };
+  }, 100);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -50,7 +61,11 @@ export default function NavBar() {
           Aziz Khasyi
         </a>
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="focus:outline-none">
+          <button
+            onClick={toggleMenu}
+            className="focus:outline-none"
+            aria-label="Toggle Menu"
+          >
             <svg
               className="w-6 h-6 transform transition-transform duration-300"
               fill="none"
@@ -67,7 +82,7 @@ export default function NavBar() {
             </svg>
           </button>
         </div>
-        <ul className={`hidden md:flex md:items-center md:gap-4`}>
+        <ul className="hidden md:flex md:items-center md:gap-4">
           {navLinks.map((link) => (
             <li key={link.id}>
               <a
@@ -83,7 +98,7 @@ export default function NavBar() {
         </ul>
       </nav>
       <ul
-        className={`fixed top-[54px] right-[-2px] w-44 text-center space-y-1 flex flex-col border-2 backdrop-blur-lg items-center py-4 z-50 shadow-black shadow-sm md:hidden rounded transform transition-transform duration-300 ${
+        className={`fixed top-[54px] right-0 w-44 text-center space-y-1 flex flex-col border-2 backdrop-blur-lg items-center py-4 z-50 shadow-black shadow-sm md:hidden rounded transform transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -94,6 +109,7 @@ export default function NavBar() {
               className={`block rounded-lg px-4 py-2 text-sm font-medium transition ${
                 activeSection === link.id ? "text-yellow-500 underline" : ""
               }`}
+              onClick={() => setIsOpen(false)} // Close menu on link click
             >
               {link.title}
             </a>
